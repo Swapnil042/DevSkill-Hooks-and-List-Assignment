@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import ProductDetails from './ProductDetails';
-import Spinner from './Spinner';
 
 const ProductPage = (props) => {
     const [product, setProduct] = useState([
