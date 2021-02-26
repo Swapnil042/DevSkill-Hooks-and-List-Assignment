@@ -35,23 +35,17 @@ const ProductPage = (props) => {
             category: "Rifle",
         }
     ]);
-    const [productClicked, setProductClicked]= useState('');
-    const [loader, setLoader]= useState(true);
-
-    const onProductClicked = (data)=>{
-        setProductClicked(data);
-    }
-
+    
     return (
-        <div style={{margin: 'auto', maxWidth: '40%', textAlign: 'left'}}>
+        <div style={{margin: 'auto', maxWidth: '40%', border: '2px solid grey', boxShadow: '5px 5px grey', borderRadius: '5px', padding: '20px'}}>
             <h3>Product Page</h3>
             {
                 product.map((data, idx) => {
-                    return <h5 key={idx} onClick={()=>onProductClicked(data)}>{idx + 1}. {data.name}</h5>
+                    return <p key={idx} onClick={()=>props.onProductClicked(data)}>
+                                {idx + 1}. <b>{data.name}</b>, <b>Price: </b>{data.price}
+                            </p>
                 })
             }
-            {loader === true && <Spinner/>}
-            {productClicked !== '' && <ProductDetails details={productClicked} loaderClose={setLoader}/>}
             
         </div>
 

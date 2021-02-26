@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .Loader,
@@ -68,4 +68,17 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.button {
+  transition-duration: 0.2s;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: grey; /* Green */
+  color: white;
 }
